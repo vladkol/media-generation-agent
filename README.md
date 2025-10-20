@@ -13,7 +13,7 @@ using [Vertex AI Agent Engine Sessions Service](https://cloud.google.com/vertex-
 
 ![Capybara with a banana](assets/capy-with-banana.png)
 
-*Capybara dancing with a banana - a keyframe for Veo 3.1, generated with Nano Banana*
+*Capybara dancing with a banana 🍌 - a keyframe image for Veo 3.1, generated with Nano Banana*
 
 ## Architecture
 
@@ -24,7 +24,7 @@ The video generation agent is composed of a main agent and three sub-agents:
 3. **Storyboard Agent**: Generates the storyboard for each shot, including the first and last frames. It uses the Gemini 2.5 Flash Image model (Nano Banana) to generate the images while preserving character and scene consistency.
 4. **Video Agent**: Creates the video for each shot using the Veo 3.1 model. It takes the first and last frames from the storyboard and generates a video that transitions between them.
 
-The Orchestrator performs [delegatio](https://google.github.io/adk-docs/agents/multi-agents/#b-llm-driven-delegation-agent-transfer) to sub-agents through various stages - from building the story to generating videos.
+The Orchestrator performs [delegation](https://google.github.io/adk-docs/agents/multi-agents/#b-llm-driven-delegation-agent-transfer) to sub-agents through various stages - from building the story to generating videos.
 The reason for using LLM-driven delegation rather than a [SequentialAgent](https://google.github.io/adk-docs/agents/workflow-agents/sequential-agents/#sequential-agents) for a sequential workflow is because the process
 is iterative, and the user may potentially jump multiple steps back to make corrections in the story or media generation prompts.
 
