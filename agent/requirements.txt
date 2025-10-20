@@ -1,0 +1,5 @@
+google-adk==1.16.*
+google-cloud-aiplatform==1.121.*
+google-cloud-storage==3.4.*
+httpx==0.28.*
+uvicorn==0.38.*
