@@ -21,8 +21,6 @@ from google.adk.agents import LlmAgent
 from google.adk.agents.callback_context import CallbackContext
 from google.adk.models.llm_response import LlmResponse
 from google.adk.models.llm_request import LlmRequest
-from google.adk.tools import AgentTool
-from google.adk.tools.load_artifacts_tool import load_artifacts_tool
 
 _, project_id = google.auth.default()
 os.environ.setdefault("GOOGLE_CLOUD_PROJECT", project_id) # type: ignore
@@ -81,10 +79,5 @@ root_agent = LlmAgent(
         When calling any functions/tools, keep "gs://" URIs as they are.
     """.strip(),
     sub_agents=[story_agent, storyboard_agent, video_agent],
-    # tools=[
-    #     AgentTool(story_agent, skip_summarization=True),
-    #     AgentTool(storyboard_agent, skip_summarization=True),
-    #     AgentTool(video_agent, skip_summarization=True),
-    # ],
     before_model_callback=before_model_callback,
 )
